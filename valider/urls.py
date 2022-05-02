@@ -15,8 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from websearching import views as viewwebsearch
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+#router.register(r'todos', viewtodo.TodoView , 'todo')
+router.register(r'websearching', viewwebsearch.WebSearchingView,'WebSearchingdetails')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('websearching/',include('websearching.urls')),
+    path('api/', include(router.urls)),
 ]
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('websearching/',include('websearching.urls')),
+# ]
