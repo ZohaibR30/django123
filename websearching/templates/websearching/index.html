@@ -1,0 +1,12 @@
+<form method="POST">
+  {% csrf_token %}
+  <input placeholder="Name" type="text" name="name" id="name" />
+
+  <!-- <input type="file" accept="image/*" name="upload" id="upload" /> -->
+  <input
+    type="submit"
+    name="Search name"
+    value="Search name"
+    id="Search name"
+  />
+</form>
